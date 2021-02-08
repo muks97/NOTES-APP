@@ -1,0 +1,64 @@
+{% extends "base.html" %} {% block title %}Testimonials{% endblock %} {% block
+    content %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container span {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+@media (max-width: 500px) {
+  .container {
+      text-align: center;
+  }
+  .container img {
+      margin: auto;
+      float: none;
+      display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Responsive Testimonials</h2>
+<form method="POST">
+    <h3 align="center"> Keep adding!</h3>
+    <div class="container">
+    <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:90px">
+    <label for="Tests"></label>
+    <input 
+    type="text"
+    class="container"
+    placeholder="here"
+    />
+    <textarea name="note" id="note" class="form-control"></textarea>
+</div>
+<br/>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>
+{% endblock %}
